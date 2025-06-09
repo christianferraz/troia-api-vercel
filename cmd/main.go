@@ -1,17 +1,10 @@
 package main
 
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
-func main() {
-	mux := http.NewServeMux()
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello, World!"))
-	})
-	server := &http.Server{
-		Addr:    ":8080",
-		Handler: mux,
-	}
-	if err := server.ListenAndServe(); err != nil {
-		panic(err)
-	}
+func Handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "<h1>Hello from Go!</h1>")
 }
