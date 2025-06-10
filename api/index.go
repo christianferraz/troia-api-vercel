@@ -23,7 +23,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		pdfData, err := GerarCertificadoPDF(certificado)
 		if err != nil {
 			slog.Error("Erro ao gerar certificado PDF", "error", err)
-			http.Error(w, "Erro ao gerar certificado PDF", http.StatusInternalServerError)
+			http.Error(w, "Erro ao gerar certificado PDF"+err.Error(), http.StatusInternalServerError)
 			return
 		}
 		w.Header().Set("Content-Type", "application/pdf")
