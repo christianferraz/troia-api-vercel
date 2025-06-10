@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/christianferraz/internal/models"
+	"github.com/christianferraz/api/models"
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
