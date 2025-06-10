@@ -15,7 +15,6 @@ import (
 func GerarCertificadoPDF(participante models.CertificadoDTO) ([]byte, error) {
 	// Lê o template SVG
 	nomeArquivo := "certificado_palestrante.svg"
-
 	svgTemplate, err := os.ReadFile(nomeArquivo)
 	if err != nil {
 		return nil, err
