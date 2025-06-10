@@ -27,7 +27,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		w.Header().Set("Content-Type", "application/pdf")
-		w.Header().Set("Content-Disposition", fmt.Sprintf("attachment; filename=\"certificado_%s.pdf\"", strings.ReplaceAll(certificadoRequest.Nome, " ", "_")))
+		w.Header().Set("Content-Disposition", fmt.Sprintf("attachment; filename=\"certificado_%s.pdf\"", strings.ReplaceAll(certificado.Nome, " ", "_")))
 		w.Header().Set("Content-Length", fmt.Sprintf("%d", len(pdfData)))
 		if _, err := w.Write(pdfData); err != nil {
 			slog.Error("Erro ao escrever resposta PDF", "error", err)
