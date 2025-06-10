@@ -40,7 +40,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 func GerarCertificadoPDF(participante models.CertificadoDTO) ([]byte, error) {
 	// Lê o template SVG
-	nomeArquivo := "certificado_palestrante.svg"
+	nomeArquivo := "api/assets/certificado_palestrante.svg"
 
 	svgTemplate, err := os.ReadFile(nomeArquivo)
 	if err != nil {
