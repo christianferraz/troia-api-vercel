@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/christianferraz/api/models"
+	"github.com/christianferraz/pkg/models"
 	"github.com/skip2/go-qrcode"
 )
 
